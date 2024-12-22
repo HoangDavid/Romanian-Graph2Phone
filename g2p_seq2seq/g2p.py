@@ -41,6 +41,7 @@ class G2P(nn.Module):
         self.lr_decay = lr_decay
         self.min_lr = min_lr
 
+        self.graph2idx = dict_load('graph2idx.json')
         self.idx2phone = dict_load('idx2phone.json')
 
     def train_model(self, batch_size, epochs, log_every):
@@ -138,13 +139,14 @@ class G2P(nn.Module):
             for batch_x, batch_y in batches:
                 batch_x = batch_x.permute(1, 0, 2)  # [seq_len, batch, dim]
                 batch_y = batch_y.permute(1, 0, 2)  # [seq_len, batch, dim]
+
                 encoder_outputs, h = self.encoder(batch_x)
                 sos_token = tc.zeros(1, batch_y.shape[1], self.decoder.output_size, device=batch_x.device)
                 preds, targets = self.decoder(sos_token, h, encoder_outputs, seq_y=batch_y, predict=True)
                 
                 preds = f.softmax(preds.permute(2, 0, 1), dim=2)
                 preds = tc.argmax(preds, dim=2).permute(1, 0)
-                print(len(preds[0]))
+                print(preds.shape)
                 exit()
 
                 all_preds.append(preds)
@@ -181,7 +183,38 @@ class G2P(nn.Module):
 
         return wer
     
+    def user_test(self, ip, fixed_size=21, fixed_classes=32):
+        ip= ip.lower()
+        input_indices = [self.graph2idx[char] for char in ip if char in self.graph2idx]
+        one_hot = tc.zeros((fixed_size, 1, len(self.graph2idx)))
+        for i, index in enumerate(input_indices[:fixed_size]):
+            one_hot[i, 0, index] = 1.0
 
+        one_hot_input = tc.zeros((fixed_size, 1, fixed_classes))
+        for i, index in enumerate(input_indices[:fixed_size]):  # Truncate if longer than fixed_size
+            one_hot_input[i, 0, index] = 1.0
+        
+        batch_x = one_hot_input.permute(1, 0, 2)
+        self.load_state_dict(tc.load('model/g2p_best_state.pt'))
+        with tc.no_grad():
+            encoder_outputs, h = self.encoder(batch_x.permute(1, 0, 2))
+            sos_token = tc.zeros(1, batch_x.size(0), self.decoder.output_size, device=batch_x.device)
+            preds, _ = self.decoder(sos_token, h, encoder_outputs, seq_y=None, predict=True)
+
+        preds = f.softmax(preds.permute(2, 0, 1), dim=2)
+        predicted_indices = tc.argmax(preds, dim=2).permute(1, 0)
+        output_indices = predicted_indices.squeeze(0).tolist()
+
+        phoneme_sequence = [
+            self.idx2phone[str(idx)] for idx in output_indices if self.idx2phone[str(idx)] not in ("<eos>", "<pad>")
+        ]
+
+        phoneme_string = " ".join(phoneme_sequence)
+
+        return phoneme_string
+        
+
+        
 
 
 class Encoder(nn.Module):

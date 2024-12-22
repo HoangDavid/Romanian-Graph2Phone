@@ -8,7 +8,8 @@ from torch.utils.data import DataLoader, TensorDataset
 def main():
     model = G2P(hidden_size=100, lr=0.001)
     # model.train_model(batch_size=32, epochs=50, log_every=100)
-    model.test()
+    # model.test()
+    model.user_test("sfătuiește")
 
 if __name__ == "__main__":
     main()
