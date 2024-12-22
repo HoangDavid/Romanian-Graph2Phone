@@ -41,8 +41,8 @@ class G2P(nn.Module):
         self.lr_decay = lr_decay
         self.min_lr = min_lr
 
-        self.graph2idx = dict_load('graph2idx.json')
-        self.idx2phone = dict_load('idx2phone.json')
+        self.graph2idx = dict_load('indexing/graph2idx.json')
+        self.idx2phone = dict_load('indexing/idx2phone.json')
 
     def train_model(self, batch_size, epochs, log_every):
         dataset = TensorDataset(self.x_train, self.y_train)
@@ -146,8 +146,6 @@ class G2P(nn.Module):
                 
                 preds = f.softmax(preds.permute(2, 0, 1), dim=2)
                 preds = tc.argmax(preds, dim=2).permute(1, 0)
-                print(preds.shape)
-                exit()
 
                 all_preds.append(preds)
                 all_targets.append(targets)
@@ -214,9 +212,6 @@ class G2P(nn.Module):
         return phoneme_string
         
 
-        
-
-
 class Encoder(nn.Module):
     def __init__(self, input_size, hidden_size, bidirectional=True) -> None:
         super(Encoder, self).__init__()
@@ -274,7 +269,7 @@ class Decoder(nn.Module):
         self.attention = Attention(encoder_hidden_dim=hidden_size, decoder_hidden_dim=hidden_size)
         self.linear = nn.Linear(hidden_size, output_size)
 
-        self.phone2idx = dict_load('phone2idx.json')
+        self.phone2idx = dict_load('indexing/phone2idx.json')
 
     def forward(self, sos_token, h, encoder_outputs, seq_y=None, predict=False):
         # sos_token: [1, batch, output_size]
