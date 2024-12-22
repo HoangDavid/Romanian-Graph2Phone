@@ -1,0 +1,145 @@
+Epoch 1
+-------------------------------
+Time:    22 | Train loss: 1.76742 | Val loss: 1.41975 | Batch:  100 / 1052 
+Time:    44 | Train loss: 1.56397 | Val loss: 1.36814 | Batch:  200 / 1052 
+Time:    68 | Train loss: 1.45377 | Val loss: 1.13360 | Batch:  300 / 1052 
+Time:    90 | Train loss: 1.37084 | Val loss: 1.08500 | Batch:  400 / 1052 
+Time:   111 | Train loss: 1.31171 | Val loss: 1.05228 | Batch:  500 / 1052 
+Time:   132 | Train loss: 1.26307 | Val loss: 1.00463 | Batch:  600 / 1052 
+Time:   153 | Train loss: 1.21984 | Val loss: 0.92183 | Batch:  700 / 1052 
+Time:   175 | Train loss: 1.18097 | Val loss: 0.90260 | Batch:  800 / 1052 
+Time:   198 | Train loss: 1.14491 | Val loss: 0.80735 | Batch:  900 / 1052 
+Time:   219 | Train loss: 1.11132 | Val loss: 0.76710 | Batch:  1000 / 1052 
+Epoch 2
+-------------------------------
+Time:   246 | Train loss: 1.05785 | Val loss: 0.68774 | Batch:  100 / 1052 
+Time:   268 | Train loss: 1.01951 | Val loss: 0.51647 | Batch:  200 / 1052 
+Time:   291 | Train loss: 0.97400 | Val loss: 0.42939 | Batch:  300 / 1052 
+Time:   314 | Train loss: 0.92499 | Val loss: 0.29117 | Batch:  400 / 1052 
+Time:   336 | Train loss: 0.87631 | Val loss: 0.20870 | Batch:  500 / 1052 
+Time:   359 | Train loss: 0.83310 | Val loss: 0.11601 | Batch:  600 / 1052 
+Time:   381 | Train loss: 0.79222 | Val loss: 0.10246 | Batch:  700 / 1052 
+Time:   402 | Train loss: 0.75593 | Val loss: 0.09230 | Batch:  800 / 1052 
+Time:   423 | Train loss: 0.72488 | Val loss: 0.09822 | Batch:  900 / 1052 
+Time:   446 | Train loss: 0.69385 | Val loss: 0.07525 | Batch:  1000 / 1052 
+Epoch 3
+-------------------------------
+Time:   474 | Train loss: 0.65266 | Val loss: 0.06949 | Batch:  100 / 1052 
+Time:   497 | Train loss: 0.62843 | Val loss: 0.06829 | Batch:  200 / 1052 
+Time:   520 | Train loss: 0.60502 | Val loss: 0.06466 | Batch:  300 / 1052 
+Time:   545 | Train loss: 0.58344 | Val loss: 0.12906 | Batch:  400 / 1052 
+Time:   570 | Train loss: 0.56364 | Val loss: 0.05212 | Batch:  500 / 1052 
+Time:   600 | Train loss: 0.54579 | Val loss: 0.06673 | Batch:  600 / 1052 
+Time:   628 | Train loss: 0.52822 | Val loss: 0.05503 | Batch:  700 / 1052 
+Time:   655 | Train loss: 0.51207 | Val loss: 0.05474 | Batch:  800 / 1052 
+Time:   681 | Train loss: 0.49719 | Val loss: 0.08354 | Batch:  900 / 1052 
+Time:   706 | Train loss: 0.48652 | Val loss: 0.11622 | Batch:  1000 / 1052 
+=> Change learning rate to: 0.0005
+Epoch 4
+-------------------------------
+Time:   732 | Train loss: 0.46675 | Val loss: 0.06207 | Batch:  100 / 1052 
+Time:   754 | Train loss: 0.45448 | Val loss: 0.05446 | Batch:  200 / 1052 
+Time:   778 | Train loss: 0.44265 | Val loss: 0.05257 | Batch:  300 / 1052 
+Time:   803 | Train loss: 0.43146 | Val loss: 0.04911 | Batch:  400 / 1052 
+Time:   825 | Train loss: 0.42080 | Val loss: 0.04547 | Batch:  500 / 1052 
+Time:   849 | Train loss: 0.41092 | Val loss: 0.04617 | Batch:  600 / 1052 
+Time:   873 | Train loss: 0.40135 | Val loss: 0.04947 | Batch:  700 / 1052 
+Time:   897 | Train loss: 0.39221 | Val loss: 0.04393 | Batch:  800 / 1052 
+Time:   920 | Train loss: 0.38387 | Val loss: 0.05933 | Batch:  900 / 1052 
+Time:   944 | Train loss: 0.37574 | Val loss: 0.04505 | Batch:  1000 / 1052 
+Epoch 5
+-------------------------------
+Time:   969 | Train loss: 0.36380 | Val loss: 0.04100 | Batch:  100 / 1052 
+Time:   993 | Train loss: 0.35630 | Val loss: 0.04119 | Batch:  200 / 1052 
+Time:  1019 | Train loss: 0.34918 | Val loss: 0.04227 | Batch:  300 / 1052 
+Time:  1045 | Train loss: 0.34261 | Val loss: 0.04087 | Batch:  400 / 1052 
+Time:  1071 | Train loss: 0.33607 | Val loss: 0.03833 | Batch:  500 / 1052 
+Time:  1095 | Train loss: 0.32980 | Val loss: 0.04463 | Batch:  600 / 1052 
+Time:  1121 | Train loss: 0.32393 | Val loss: 0.04074 | Batch:  700 / 1052 
+Time:  1145 | Train loss: 0.31856 | Val loss: 0.04571 | Batch:  800 / 1052 
+Time:  1170 | Train loss: 0.31308 | Val loss: 0.04598 | Batch:  900 / 1052 
+Time:  1197 | Train loss: 0.30782 | Val loss: 0.04264 | Batch:  1000 / 1052 
+=> Change learning rate to: 0.00025
+Epoch 6
+-------------------------------
+Time:  1225 | Train loss: 0.29996 | Val loss: 0.03723 | Batch:  100 / 1052 
+Time:  1250 | Train loss: 0.29502 | Val loss: 0.03620 | Batch:  200 / 1052 
+Time:  1274 | Train loss: 0.29031 | Val loss: 0.03516 | Batch:  300 / 1052 
+Time:  1300 | Train loss: 0.28571 | Val loss: 0.03555 | Batch:  400 / 1052 
+Time:  1326 | Train loss: 0.28136 | Val loss: 0.03480 | Batch:  500 / 1052 
+Time:  1351 | Train loss: 0.27701 | Val loss: 0.03814 | Batch:  600 / 1052 
+Time:  1377 | Train loss: 0.27285 | Val loss: 0.03440 | Batch:  700 / 1052 
+Time:  1404 | Train loss: 0.26877 | Val loss: 0.03358 | Batch:  800 / 1052 
+Time:  1428 | Train loss: 0.26491 | Val loss: 0.03622 | Batch:  900 / 1052 
+Time:  1450 | Train loss: 0.26117 | Val loss: 0.03409 | Batch:  1000 / 1052 
+Epoch 7
+-------------------------------
+Time:  1477 | Train loss: 0.25557 | Val loss: 0.03393 | Batch:  100 / 1052 
+Time:  1504 | Train loss: 0.25207 | Val loss: 0.03456 | Batch:  200 / 1052 
+Time:  1525 | Train loss: 0.24863 | Val loss: 0.03202 | Batch:  300 / 1052 
+Time:  1550 | Train loss: 0.24531 | Val loss: 0.03123 | Batch:  400 / 1052 
+Time:  1573 | Train loss: 0.24219 | Val loss: 0.03322 | Batch:  500 / 1052 
+Time:  1595 | Train loss: 0.23914 | Val loss: 0.03134 | Batch:  600 / 1052 
+Time:  1619 | Train loss: 0.23611 | Val loss: 0.02959 | Batch:  700 / 1052 
+Time:  1643 | Train loss: 0.23316 | Val loss: 0.03169 | Batch:  800 / 1052 
+Time:  1669 | Train loss: 0.23026 | Val loss: 0.03144 | Batch:  900 / 1052 
+Time:  1697 | Train loss: 0.22748 | Val loss: 0.03955 | Batch:  1000 / 1052 
+Epoch 8
+-------------------------------
+Time:  1727 | Train loss: 0.22341 | Val loss: 0.03214 | Batch:  100 / 1052 
+Time:  1751 | Train loss: 0.22075 | Val loss: 0.03055 | Batch:  200 / 1052 
+=> Change learning rate to: 0.000125
+Time:  1777 | Train loss: 0.21823 | Val loss: 0.03406 | Batch:  300 / 1052 
+Time:  1800 | Train loss: 0.21573 | Val loss: 0.02943 | Batch:  400 / 1052 
+Time:  1821 | Train loss: 0.21326 | Val loss: 0.02941 | Batch:  500 / 1052 
+Time:  1847 | Train loss: 0.21088 | Val loss: 0.02965 | Batch:  600 / 1052 
+Time:  1874 | Train loss: 0.20859 | Val loss: 0.02839 | Batch:  700 / 1052 
+Time:  1895 | Train loss: 0.20632 | Val loss: 0.02875 | Batch:  800 / 1052 
+Time:  1921 | Train loss: 0.20411 | Val loss: 0.02820 | Batch:  900 / 1052 
+Time:  1945 | Train loss: 0.20191 | Val loss: 0.02953 | Batch:  1000 / 1052 
+Epoch 9
+-------------------------------
+Time:  1971 | Train loss: 0.19869 | Val loss: 0.02952 | Batch:  100 / 1052 
+Time:  1998 | Train loss: 0.19664 | Val loss: 0.02777 | Batch:  200 / 1052 
+Time:  2023 | Train loss: 0.19458 | Val loss: 0.02776 | Batch:  300 / 1052 
+Time:  2049 | Train loss: 0.19264 | Val loss: 0.03050 | Batch:  400 / 1052 
+Time:  2073 | Train loss: 0.19067 | Val loss: 0.02778 | Batch:  500 / 1052 
+Time:  2099 | Train loss: 0.18879 | Val loss: 0.02786 | Batch:  600 / 1052 
+Time:  2122 | Train loss: 0.18700 | Val loss: 0.02918 | Batch:  700 / 1052 
+Time:  2148 | Train loss: 0.18523 | Val loss: 0.02882 | Batch:  800 / 1052 
+=> Change learning rate to: 6.25e-05
+Time:  2173 | Train loss: 0.18345 | Val loss: 0.02905 | Batch:  900 / 1052 
+Time:  2197 | Train loss: 0.18173 | Val loss: 0.02784 | Batch:  1000 / 1052 
+Epoch 10
+-------------------------------
+Time:  2224 | Train loss: 0.17915 | Val loss: 0.02761 | Batch:  100 / 1052 
+Time:  2249 | Train loss: 0.17748 | Val loss: 0.02713 | Batch:  200 / 1052 
+Time:  2276 | Train loss: 0.17589 | Val loss: 0.02701 | Batch:  300 / 1052 
+Time:  2302 | Train loss: 0.17430 | Val loss: 0.02890 | Batch:  400 / 1052 
+Time:  2327 | Train loss: 0.17274 | Val loss: 0.02750 | Batch:  500 / 1052 
+Time:  2353 | Train loss: 0.17122 | Val loss: 0.02749 | Batch:  600 / 1052 
+Time:  2377 | Train loss: 0.16971 | Val loss: 0.02670 | Batch:  700 / 1052 
+Time:  2403 | Train loss: 0.16822 | Val loss: 0.02645 | Batch:  800 / 1052 
+Time:  2431 | Train loss: 0.16675 | Val loss: 0.02669 | Batch:  900 / 1052 
+Time:  2457 | Train loss: 0.16536 | Val loss: 0.02748 | Batch:  1000 / 1052 
+Epoch 11
+-------------------------------
+Time:  2482 | Train loss: 0.16325 | Val loss: 0.02827 | Batch:  100 / 1052 
+Time:  2507 | Train loss: 0.16191 | Val loss: 0.02895 | Batch:  200 / 1052 
+Time:  2529 | Train loss: 0.16057 | Val loss: 0.02838 | Batch:  300 / 1052 
+=> Change learning rate to: 3.125e-05
+Time:  2555 | Train loss: 0.15925 | Val loss: 0.02828 | Batch:  400 / 1052 
+Time:  2580 | Train loss: 0.15797 | Val loss: 0.02833 | Batch:  500 / 1052 
+Time:  2606 | Train loss: 0.15667 | Val loss: 0.02781 | Batch:  600 / 1052 
+Time:  2629 | Train loss: 0.15543 | Val loss: 0.02887 | Batch:  700 / 1052 
+Time:  2653 | Train loss: 0.15422 | Val loss: 0.02748 | Batch:  800 / 1052 
+=> Change learning rate to: 1.5625e-05
+Time:  2680 | Train loss: 0.15303 | Val loss: 0.02755 | Batch:  900 / 1052 
+Time:  2702 | Train loss: 0.15184 | Val loss: 0.02726 | Batch:  1000 / 1052 
+Epoch 12
+-------------------------------
+Time:  2731 | Train loss: 0.15006 | Val loss: 0.02738 | Batch:  100 / 1052 
+Time:  2754 | Train loss: 0.14892 | Val loss: 0.02777 | Batch:  200 / 1052 
+Time:  2777 | Train loss: 0.14781 | Val loss: 0.02709 | Batch:  300 / 1052 
+=> Change learning rate to: 7.8125e-06
+Early stopping triggered.

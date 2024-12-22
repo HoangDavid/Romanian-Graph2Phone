@@ -132,6 +132,8 @@ class G2P(nn.Module):
         batches = DataLoader(dataset, batch_size=1, shuffle=True)
         self.load_state_dict(tc.load('model/g2p_best_state.pt'))
 
+        all_preds = []
+        all_targets = []
         with tc.no_grad():
             for batch_x, batch_y in batches:
                 batch_x = batch_x.permute(1, 0, 2)  # [seq_len, batch, dim]
@@ -139,12 +141,47 @@ class G2P(nn.Module):
                 encoder_outputs, h = self.encoder(batch_x)
                 sos_token = tc.zeros(1, batch_y.shape[1], self.decoder.output_size, device=batch_x.device)
                 preds, targets = self.decoder(sos_token, h, encoder_outputs, seq_y=batch_y, predict=True)
-                # break  # Remove this break to test on all samples
+                
+                preds = f.softmax(preds.permute(2, 0, 1), dim=2)
+                preds = tc.argmax(preds, dim=2).permute(1, 0)
+                print(len(preds[0]))
+                exit()
 
-        preds = f.softmax(preds.permute(2, 0, 1), dim=2)
-        preds = tc.argmax(preds, dim=2).permute(1, 0)
-        print(preds)
-        print(targets)
+                all_preds.append(preds)
+                all_targets.append(targets)
+
+        all_preds = tc.cat(all_preds, dim=0)
+        all_targets = tc.cat(all_targets, dim=0)
+        
+        print(f'PER (Phoneme Error Rate): {self.PER(all_preds, all_targets) * 100:.3f}%')
+        print(f'WER (Word Error Rate): {self.WER(all_preds, all_targets) * 100:.3f}%')
+
+    def PER(self, preds, targets):
+        assert preds.shape == targets.shape, "Predictions and targets must have the same shape."
+
+        # Flatten all phonemes for PER calculation
+        flat_preds = preds.view(-1)
+        flat_targets = targets.view(-1)
+
+        # Phoneme Error Rate (PER)
+        total_phonemes = len(flat_targets)
+        phoneme_errors = (flat_preds != flat_targets).sum().item()
+        per = phoneme_errors / total_phonemes
+
+        return per
+    
+    def WER(self, preds, targets):
+        # Ensure predictions and targets are the same shape
+        assert preds.shape == targets.shape, "Predictions and targets must have the same shape."
+
+        # Word Error Rate (WER)
+        word_errors = sum([pred.tolist() != target.tolist() for pred, target in zip(preds, targets)])
+        total_words = len(targets)
+        wer = word_errors / total_words
+
+        return wer
+    
+
 
 
 class Encoder(nn.Module):
@@ -172,7 +209,6 @@ class Attention(nn.Module):
         # hidden: [1, batch, decoder_hidden_dim]
         # encoder_outputs: [seq_len, batch, encoder_hidden_dim]
         seq_len = encoder_outputs.size(0)
-        batch_size = encoder_outputs.size(1)
 
         # Repeat hidden state seq_len times
         hidden = hidden.repeat(seq_len, 1, 1)  # [seq_len, batch, decoder_hidden_dim]
